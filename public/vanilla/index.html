@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================================
+       METADATA & HEAD CONFIGURATION
+       ==================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masudul Zarif - Personal Portfolio & UI Architect</title>
+  <meta name="description" content="Personal portfolio of Masudul Zarif: Frontend Engineer & UI Architect specializing in semantic HTML5, modern CSS3, and vanilla JavaScript.">
+
+  <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body), JetBrains Mono (Code/Numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Handcrafted Modular Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       1. SITE HEADER (3-Zone Top Bar Contract)
+       Zone 1: Brand Wordmark (Single element)
+       Zone 2: Semantic Navigation Links (Single line, text with underline)
+       Zone 3: Actions (Theme Toggle & Primary Action)
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Zone 1: Single Wordmark Element -->
+      <a href="#hero" class="brand-wordmark">Masudul Zarif</a>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav aria-label="Primary site navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#writing" class="nav-link">Writing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Zone 3: Actions -->
+      <div class="header-actions">
+        <!-- Dark/Light Mode Switcher -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+          🌙
+        </button>
+        <!-- Primary Action -->
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer (Hidden by default, toggled via JavaScript) -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer" style="display: none;">
+      <a href="#hero" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#writing" class="nav-link">Writing</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       MAIN CONTENT WRAPPER
+       ==================================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================================
+         SECTION 1: HERO (Introduction, Bio, Visual, Stats)
+         ================================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Typographic Hierarchy -->
+          <div class="hero-copy-col">
+            <div class="hero-kicker">
+              <span>Frontend Engineer & UI Architect</span>
+              <span class="meta-dot">·</span>
+              <span>San Francisco & Remote</span>
+            </div>
+            
+            <h1 id="hero-title" class="hero-title">
+              Crafting resilient, semantic, and handcrafted digital experiences.
+            </h1>
+
+            <p class="hero-bio">
+              Hello! I'm Masudul. I care deeply about web fundamentals. I specialize in building accessible, ultra-fast web applications using semantic HTML5, modern modular CSS3, and clean vanilla JavaScript before reaching for heavy dependencies.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">Explore Featured Work</a>
+              <a href="#contact" class="btn-secondary">Send a Message</a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials">
+              <span>Connect:</span>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hero-social-link">GitHub</a>
+              <span class="meta-dot">/</span>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hero-social-link">LinkedIn</a>
+              <span class="meta-dot">/</span>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hero-social-link">X (Twitter)</a>
+              <span class="meta-dot">/</span>
+              <a href="mailto:masudulzarif@gmail.com" class="hero-social-link">Email</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Architecture & Manifesto Card (No Photo) -->
+          <div class="hero-visual-col">
+            <div class="hero-code-card">
+              <div class="code-card-header">
+                <div class="code-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="code-filename">developer.config.json</span>
+              </div>
+              <pre class="code-card-body"><code><span class="code-keyword">const</span> developer = {
+  name: <span class="code-string">"Masudul Zarif"</span>,
+  craft: <span class="code-string">"Semantic HTML5 & Modern CSS3"</span>,
+  engine: <span class="code-string">"Vanilla JavaScript (Zero Bloat)"</span>,
+  standards: [<span class="code-string">"WCAG-AA"</span>, <span class="code-string">"W3C"</span>],
+  availability: <span class="code-boolean">true</span>
+};</code></pre>
+              <div class="code-card-footer">
+                <span>⚡ 100% Handcrafted</span>
+                <span>Open for select roles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Width Stats Strip Below Hero Split -->
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <span class="stat-value">6+</span>
+            <span class="stat-label">Years Crafting Web UI</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">24+</span>
+            <span class="stat-label">Shipped Applications</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">99</span>
+            <span class="stat-label">Avg. Lighthouse Score</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1.2k</span>
+            <span class="stat-label">Open Source Stars</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 2: FEATURED PROJECTS (Grid Layout with Filters)
+         ================================================================== -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-kicker">Portfolio & Case Studies</p>
+          <h2 id="projects-title" class="section-title">Selected Projects</h2>
+          <p class="section-desc">
+            A curated collection of web applications, tools, and experiments built with attention to performance, typography, and pure code craftsmanship.
+          </p>
+        </header>
+
+        <!-- Category Filter Controls (Interactive Buttons) -->
+        <div id="project-filters" class="filter-bar" role="toolbar" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-category="all" aria-pressed="true">All Works (4)</button>
+          <button class="filter-btn" data-category="web-apps" aria-pressed="false">Web Apps (1)</button>
+          <button class="filter-btn" data-category="tools" aria-pressed="false">Developer Tools (2)</button>
+          <button class="filter-btn" data-category="editorial" aria-pressed="false">Editorial (1)</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: Aether Synth -->
+          <article class="project-card" data-category="web-apps">
+            <div class="project-img-wrap">
+              <img src="/src/assets/images/project_audio_synth_1792768932768.jpg" alt="Aether Audio synthesizer user interface preview" class="project-img" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-header-row">
+                <h3 class="project-title">Aether Synth</h3>
+                <span class="project-year">2026</span>
+              </div>
+              <p class="project-tagline">Tactile Web Audio Synthesizer & Ambient Generator</p>
+              <p class="project-desc">
+                An in-browser procedural synthesizer built directly on the Web Audio API. Features custom canvas waveform rendering, polyphonic oscillators, envelope shaping, and responsive touch controls.
+              </p>
+              <!-- Unboxed Metadata (NO PILLS) -->
+              <div class="project-tags-row meta-row">
+                <span>Web Audio API</span>
+                <span class="meta-dot">·</span>
+                <span>Canvas 2D</span>
+                <span class="meta-dot">·</span>
+                <span>Vanilla JS</span>
+                <span class="meta-dot">·</span>
+                <span>AudioWorklet</span>
+              </div>
+              <div class="project-links-row">
+                <a href="#demo-synth" class="project-link">View Live Demo →</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">Source Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Platform Journal -->
+          <article class="project-card" data-category="editorial">
+            <div class="project-img-wrap">
+              <img src="/src/assets/images/project_editorial_reader_1792768933138.jpg" alt="Platform Journal editorial typography reader on tablet" class="project-img" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-header-row">
+                <h3 class="project-title">Platform Journal</h3>
+                <span class="project-year">2026</span>
+              </div>
+              <p class="project-tagline">Distraction-Free Minimalist Editorial Reader</p>
+              <p class="project-desc">
+                A digital publishing platform and typography-driven article reader designed around focus. Built with strict semantic HTML5 and CSS subgrid to deliver fluid type scaling and offline reading.
+              </p>
+              <!-- Unboxed Metadata (NO PILLS) -->
+              <div class="project-tags-row meta-row">
+                <span>Semantic HTML5</span>
+                <span class="meta-dot">·</span>
+                <span>CSS Grid</span>
+                <span class="meta-dot">·</span>
+                <span>IndexedDB</span>
+                <span class="meta-dot">·</span>
+                <span>Service Worker</span>
+              </div>
+              <div class="project-links-row">
+                <a href="#demo-reader" class="project-link">View Live Demo →</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">Source Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Aura Token Studio -->
+          <article class="project-card" data-category="tools">
+            <div class="project-img-wrap">
+              <img src="/src/assets/images/project_design_tokens_1792768933865.jpg" alt="Aura Token Studio color palette generation interface" class="project-img" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-header-row">
+                <h3 class="project-title">Aura Token Studio</h3>
+                <span class="project-year">2025</span>
+              </div>
+              <p class="project-tagline">Accessible Design Tokens & Color Palette Engine</p>
+              <p class="project-desc">
+                A developer tool that generates WCAG 2.1 & APCA compliant color hierarchies and fluid typography systems. Generates pure modular CSS custom properties with live component testing.
+              </p>
+              <!-- Unboxed Metadata (NO PILLS) -->
+              <div class="project-tags-row meta-row">
+                <span>CSS Custom Properties</span>
+                <span class="meta-dot">·</span>
+                <span>Color Math</span>
+                <span class="meta-dot">·</span>
+                <span>Clipboard API</span>
+                <span class="meta-dot">·</span>
+                <span>TypeScript</span>
+              </div>
+              <div class="project-links-row">
+                <a href="#demo-tokens" class="project-link">View Live Demo →</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">Source Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: FlowGraph Engine -->
+          <article class="project-card" data-category="tools">
+            <div class="project-body" style="padding-top: var(--space-8);">
+              <div class="project-header-row">
+                <h3 class="project-title">FlowGraph Engine</h3>
+                <span class="project-year">2025</span>
+              </div>
+              <p class="project-tagline">Lightweight Dependency Inspector & Visualizer</p>
+              <p class="project-desc">
+                A zero-dependency 2D graph visualizer built with HTML5 Canvas. Inspects module hierarchies, calculates cyclical dependencies, and renders thousands of nodes smoothly at 60fps.
+              </p>
+              <!-- Unboxed Metadata (NO PILLS) -->
+              <div class="project-tags-row meta-row">
+                <span>HTML5 Canvas</span>
+                <span class="meta-dot">·</span>
+                <span>Algorithms</span>
+                <span class="meta-dot">·</span>
+                <span>Performance Optimization</span>
+                <span class="meta-dot">·</span>
+                <span>ES Modules</span>
+              </div>
+              <div class="project-links-row">
+                <a href="#demo-graph" class="project-link">View Live Demo →</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">Source Code ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 3: SKILLS & TOOLS (Categorized Breakdown)
+         ================================================================== -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-kicker">Capabilities & Craft</p>
+          <h2 id="skills-title" class="section-title">Skills & Technical Toolkit</h2>
+          <p class="section-desc">
+            A deliberate focus on web platform standards, enduring languages, and performance-minded architecture.
+          </p>
+        </header>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Core Web Fundamentals</h3>
+            <p class="skill-cat-desc">The resilient foundation of the modern open web, built without framework fatigue.</p>
+            <ul class="skills-list">
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Semantic HTML5</span>
+                  <span class="skill-level-badge">Expert · 6+ yrs</span>
+                </div>
+                <span class="skill-note">Living standard, WAI-ARIA landmarks, SEO & accessibility</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Modular CSS3 & Architecture</span>
+                  <span class="skill-level-badge">Expert · 6+ yrs</span>
+                </div>
+                <span class="skill-note">CSS Grid, Flexbox, Custom Properties, Cascade Layers (@layer)</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Vanilla JavaScript (ES6+)</span>
+                  <span class="skill-level-badge">Expert · 6+ yrs</span>
+                </div>
+                <span class="skill-note">Async/Await, DOM manipulation, Web APIs, Event Delegation</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">Strict type safety, generics, schema validation</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Performance & Accessibility</h3>
+            <p class="skill-cat-desc">Engineering interfaces for speed, accessibility, and resilience across all screen sizes.</p>
+            <ul class="skills-list">
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Web Accessibility (WCAG AA)</span>
+                  <span class="skill-level-badge">Advanced · 5+ yrs</span>
+                </div>
+                <span class="skill-note">Screen reader testing, keyboard navigation, focus management</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Responsive & Fluid Design</span>
+                  <span class="skill-level-badge">Expert · 6+ yrs</span>
+                </div>
+                <span class="skill-note">Mobile-first layouts, container queries, clamp() fluid typography</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Core Web Vitals & Auditing</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">LCP, INP, CLS optimization, bundle budget enforcement</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Browser Storage & Web APIs</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">LocalStorage, IndexedDB, IntersectionObserver, ResizeObserver</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Tooling & Ecosystem</h3>
+            <p class="skill-cat-desc">Selective application of modern libraries when project scale calls for them.</p>
+            <ul class="skills-list">
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Vite & Modern Bundlers</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">Zero-config fast dev servers, code-splitting, tree-shaking</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">React & Component Modeling</span>
+                  <span class="skill-level-badge">Advanced · 5+ yrs</span>
+                </div>
+                <span class="skill-note">Hooks architecture, state management, composable design</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Tailwind CSS & PostCSS</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">Utility architecture, design token integration</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Git & Version Control</span>
+                  <span class="skill-level-badge">Proficient · 6+ yrs</span>
+                </div>
+                <span class="skill-note">Trunk-based development, semantic commits, PR reviews</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">UI Design & Craft</h3>
+            <p class="skill-cat-desc">Bridging the gap between design theory and clean executable code.</p>
+            <ul class="skills-list">
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Design Systems & Tokens</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">Color theory, spatial grids, reusable component specifications</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Typographic Hierarchy</span>
+                  <span class="skill-level-badge">Expert · 5+ yrs</span>
+                </div>
+                <span class="skill-note">Measure, leading, font pairings, tabular numerals</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Micro-interactions & Motion</span>
+                  <span class="skill-level-badge">Advanced · 4+ yrs</span>
+                </div>
+                <span class="skill-note">CSS transitions, hardware-accelerated transforms (<=200ms)</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-item-header">
+                  <span class="skill-name">Figma to Code Fidelity</span>
+                  <span class="skill-level-badge">Expert · 5+ yrs</span>
+                </div>
+                <span class="skill-note">Translating mockups directly into clean, semantic markup</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 4: WRITING & ARTICLES (Editorial List)
+         ================================================================== -->
+    <section id="writing" class="section" aria-labelledby="writing-title">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-kicker">Writings & Insights</p>
+          <h2 id="writing-title" class="section-title">Articles on Web Craft</h2>
+          <p class="section-desc">
+            Essays on frontend architecture, semantic standards, and the philosophy of building durable digital artifacts.
+          </p>
+        </header>
+
+        <div class="articles-list">
+          <!-- Article 1 -->
+          <article class="article-entry" data-category="Architecture" data-date="March 18, 2026" data-readtime="6 min read">
+            <div class="meta-row">
+              <span>Architecture</span>
+              <span class="meta-dot">·</span>
+              <span>March 18, 2026</span>
+              <span class="meta-dot">·</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="article-title">The Lost Art of Semantic HTML: Why Tags Matter in Modern Web Development</h3>
+            <p class="article-summary">
+              Why choosing intentional tags (&lt;header&gt;, &lt;main&gt;, &lt;article&gt;, &lt;figure&gt;) instead of infinite nested &lt;div&gt; wrappers delivers better accessibility, improved SEO, and code you can actually read six months later.
+            </p>
+            <button class="article-read-btn" data-read-article>Read Full Essay →</button>
+            <!-- Hidden full content for modal -->
+            <div class="article-full-content" style="display: none;">
+              <p>Over the last decade, our industry made remarkable strides in tooling, compilation pipelines, and reactive state systems. Yet, somewhere along the way, we started treating HTML as an afterthought—an indiscriminate nest of anonymous div and span elements.</p>
+              <p>Semantic HTML is not merely an academic preference; it is the fundamental contract between your content and the browser. When you use an &lt;article&gt; tag, you are telling assistive technologies, search crawlers, and read-it-later utilities: 'This content represents an independent, self-contained piece of information.'</p>
+              <p>Consider document outline landmarks. A screen reader user navigating with landmark shortcuts expects to hop directly between &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, and &lt;footer&gt;. When everything is a div, that user is forced into tedious linear scanning. By leaning into native elements, you get keyboard accessibility, semantic outlines, and touch affordances for free.</p>
+              <p>Next time you reach for another wrapper element, pause and ask: What is this content fundamentally doing? If it's navigation, make it a &lt;nav&gt;. If it's a quote with attribution, use &lt;blockquote&gt; and &lt;cite&gt;. If it's a contact form, use &lt;form&gt; with explicit &lt;label&gt; associations. Your users—and your future self—will thank you.</p>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="article-entry" data-category="CSS" data-date="January 24, 2026" data-readtime="8 min read">
+            <div class="meta-row">
+              <span>CSS</span>
+              <span class="meta-dot">·</span>
+              <span>January 24, 2026</span>
+              <span class="meta-dot">·</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="article-title">Handcrafted CSS Without Heavy Frameworks: The Power of Modern CSS</h3>
+            <p class="article-summary">
+              How to architect a resilient, modular design system using native CSS Custom Properties, CSS Grid, clamp() fluid scaling, and minimal code footprint.
+            </p>
+            <button class="article-read-btn" data-read-article>Read Full Essay →</button>
+            <div class="article-full-content" style="display: none;">
+              <p>For years, developers relied on heavy CSS frameworks because browsers were inconsistent and missing essential layout primitives. In 2026, the modern web platform is extraordinarily capable on its own.</p>
+              <p>With CSS Custom Properties (variables), you can define a complete design token system directly in your stylesheet. Dark mode, spacing scales, and typographical rhythm can be updated in a single declaration without re-downloading kilobytes of utility classes.</p>
+              <p>Fluid typography with clamp() allows your headings to smoothly scale between mobile viewports and ultra-wide desktop monitors without a single media query breakpoint. Pair that with CSS Grid auto-fit and minmax(), and your project galleries reflow naturally with zero layout shift.</p>
+              <p>When you handcraft your CSS, you maintain total ownership over every byte shipped over the wire. You avoid the generic 'cookie-cutter' look, and the resulting stylesheet is simple enough for any junior developer to understand at a glance.</p>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="article-entry" data-category="JavaScript" data-date="November 12, 2025" data-readtime="5 min read">
+            <div class="meta-row">
+              <span>JavaScript</span>
+              <span class="meta-dot">·</span>
+              <span>November 12, 2025</span>
+              <span class="meta-dot">·</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="article-title">Mastering Vanilla JavaScript: Event Delegation and State Sync</h3>
+            <p class="article-summary">
+              A practical guide to handling dynamic UI interactions with minimal event listeners, clean DOM queries, and local state persistence.
+            </p>
+            <button class="article-read-btn" data-read-article>Read Full Essay →</button>
+            <div class="article-full-content" style="display: none;">
+              <p>Before importing megabytes of runtime libraries for a personal site or interactive document, consider what native JavaScript offers out of the box.</p>
+              <p>Event delegation is one of the most elegant patterns in web engineering. Rather than attaching individual 'click' listeners to twenty project filter buttons or article cards, you attach a single listener to their parent container and evaluate event.target.closest('[data-action]').</p>
+              <p>This approach drastically reduces memory consumption, prevents memory leaks when items are dynamically added or removed, and keeps your codebase delightfully lean.</p>
+              <p>When combined with data-* attributes and simple state dispatchers, vanilla JavaScript allows you to build fast, responsive, and durable interfaces that load in milliseconds and never break when a framework updates its major version.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 5: CONTACT SECTION (Clean Semantic Form)
+         ================================================================== -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-kicker">Get in Touch</p>
+          <h2 id="contact-title" class="section-title">Let's Build Something Together</h2>
+          <p class="section-desc">
+            Have a project in mind, an opportunity to discuss, or simply want to chat about web standards? Drop me a message below.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Left Column: Direct Info & Quick Copy -->
+          <div class="contact-info-col">
+            <div class="contact-direct-card">
+              <h3 class="contact-direct-title">Direct Inquiries</h3>
+              <p class="contact-email-text">masudulzarif@gmail.com</p>
+              <button id="copy-email-btn" class="copy-email-btn" data-email="masudulzarif@gmail.com">
+                📋 Copy Email Address
+              </button>
+            </div>
+
+            <div class="contact-direct-card">
+              <h3 class="contact-direct-title">Current Availability</h3>
+              <p style="font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-2);">
+                Open for select consulting, frontend architectural audits, and senior engineering roles.
+              </p>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">
+                Typical response turnaround: &lt; 24 hours.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Semantic HTML5 Form -->
+          <div class="contact-form-col">
+            <form id="contact-form" class="contact-form" novalidate>
+              <!-- Live Feedback Message Area -->
+              <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span style="color:#ef4444;">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Eleanor Vance" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address <span style="color:#ef4444;">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. eleanor@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. Frontend Engineering Project" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message <span style="color:#ef4444;">*</span></label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your goals, timeline, or idea..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="padding: var(--space-3) var(--space-6); font-size: var(--text-base);">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SITE FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <p>© 2026 Masudul Zarif. Handcrafted with semantic HTML5, CSS3, & vanilla JavaScript.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+        <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-link">Twitter</a></li>
+        <li><a href="mailto:masudulzarif@gmail.com" class="footer-link">Email</a></li>
+      </ul>
+
+      <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top of page">
+        ↑ Back to Top
+      </button>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       ARTICLE READING LIGHTBOX MODAL
+       ==================================================================== -->
+  <div id="article-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-article-title">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close article modal">✕</button>
+      <div id="modal-article-meta" class="meta-row" style="margin-bottom: var(--space-3);"></div>
+      <h2 id="modal-article-title" style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-6); text-wrap: balance;"></h2>
+      <div id="modal-article-body" style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7; display: flex; flex-direction: column; gap: var(--space-4);"></div>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="./script.js"></script>
+</body>
+</html>
